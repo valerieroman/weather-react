@@ -1,38 +1,152 @@
-.App {
+body {
+  background-image: url("./images/skysunset.jpeg");
+  background-position: center;
+}
+
+h1 {
+  color: #ee603a;
+  text-align: center;
+  font-size: 46px;
+  font-family: "Abril Fatface", cursive;
+  font-family: "Zilla Slab", serif;
+}
+
+p {
+  text-align: center;
+  font-size: 26px;
+  font-family: "Zilla Slab", serif;
+}
+
+.weather-app-wrapper {
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  background-color: rgba(240, 235, 232, 0.288);
+  box-shadow: rgba(5, 5, 5, 0.5) 0px 8px 8px 0;
+}
+
+.details {
+  font-size: 20px;
+  color: #000000;
+  margin: 0 auto;
+  padding: 0;
+}
+ul {
+  list-style: none;
+  font-size: 20px;
+  color: #000000;
+}
+
+.days-forecast {
+  text-align: center;
+  margin-top: 20px;
+  margin: 0 auto;
+}
+
+.days {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.city-info {
+  font-size: 30px;
+  font-weight: 600;
+  color: #000000;
+  font-family: "Zilla Slab", serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#overall-weather {
+  font-size: 30px;
+  font-weight: 600;
+  color: #000000;
+  font-family: "Zilla Slab", senrif;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#icon {
+  font-size: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+.weekdays {
+  text-decoration: underline;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "Abril Fatface", cursive;
+  opacity: 0.5;
+}
+
+.emoji {
+  font-size: 36px;
+}
+
+.high-low {
+  font-weight: 500;
+  font-size: 25px;
+  color: #000000;
+  font-family: "Zilla Slab", serif;
+}
+
+.btn-success {
+  background: #8fd9a8;
+  border: #8fd9a8;
+}
+
+.btn-success:hover {
+  background: #d2e69c;
+  transition: 200ms all ease-in-out;
+}
+
+.btn-primary {
+  background: #4b778d;
+  border: #4b778d;
+}
+
+.btn-primary:hover {
+  transition: 200ms all ease-in-out;
+}
+
+.fahrenheit-link {
+  position: relative;
+  font-size: 25px;
+  top: -32px;
+}
+
+.fahrenheit-link:hover {
+  color: #f48b29;
+  transition: 200ms all ease-in-out;
+  text-decoration: underline;
+  font-size: 25px;
+}
+
+.celsius-link {
+  position: relative;
+  font-size: 25px;
+  top: -32px;
+}
+
+.celsius-link {
+  color: #f48b29;
+  transition: 200ms all ease-in-out;
+  text-decoration: underline;
+  font-size: 25px;
+}
+
+.currentTemp {
+  font-weight: 900;
+  color: purple;
+  font-size: 64px;
 }
