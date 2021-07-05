@@ -62,7 +62,4 @@ export default function Weather() {
     </div>
   );
 }
-<p>
-  Coded by Valerie Roman De Jesus: <a href= "https://github.com/valerieroman/weather-react"></a>
-</p>
 
