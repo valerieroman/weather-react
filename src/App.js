@@ -39,13 +39,13 @@ export default function Weather() {
                         <div className="currentTemp">
                           <span id="temperature"> 59 </span>
                           <span className="units">
-                            <a href="#" id="celsius-link" className="active">
+                            <span href="#" id="celsius-link" className="active">
                               °C
-                            </a>{" "}
+                            </span>{" "}
                             |{" "}
-                            <a href="#" id="fahrenheit-link">
+                            <span href="#" id="fahrenheit-link">
                               °F
-                            </a>
+                            </span>
                           </span>
                         </div>
                       </div>
