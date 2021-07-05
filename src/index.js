@@ -3,17 +3,8 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import App from './App';
 
-function Index() {
-  return (
-    <div className="Index">
-      <a href= "https://github.com/valerieroman/weather-react" target="_blank">
-      Open source code by Valerie Roman De Jesus
-      </a>
-      
-    </div>
-  )
-}
 
+      
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -1,6 +1,7 @@
 import React from "react";
 import Search from "./Search";
-import './App.css';
+import "./App.css";
+import Footer from "./Footer";
 
 export default function Weather() {
   return (
@@ -58,8 +59,8 @@ export default function Weather() {
             <Search />
           </div>
         </div>
+<Footer />
       </div>
     </div>
   );
 }
-
