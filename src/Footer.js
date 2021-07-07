@@ -4,8 +4,7 @@ import "./Footer.css";
 export default function Footer() {
     return (
         <p className="footer-cont">
-          <a href= "https://github.com/valerieroman/weather-react" target="_blank" rel="noreferrer">
-          Open source code by Valerie Roman De Jesus
+          This project was coded by Valerie Roman De Jesus and is <a href= "https://github.com/valerieroman/weather-react" target="_blank" rel="noreferrer"> open-sourced on GitHub 
           </a>
           </p>
           );
