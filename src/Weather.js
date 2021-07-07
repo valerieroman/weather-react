@@ -31,15 +31,16 @@ export default function Weather(props) {
 
   function search() {
     const apiKey= "b15c68d0eb463f5b86f355f615a747ce";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultcity}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
+
   if (weatherData.ready) {
     return (
-      <div className="search-city">
+      <div className="Weather">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-6">
+            <div className="col-9">
               <input
                 type="search"
                 className="form-control"
@@ -47,25 +48,67 @@ export default function Weather(props) {
                 autoFocus="on"
                 autoComplete="off"
                 onChange={handleCityChange}
-                id="search-city-input"
               />
               </div>
-        <div className="col-6">
-          <input type="submit" className="btn btn-success" value="Search" />
-          <input
-            type="submit"
-            className="btn btn-primary"
-            value="Current Location"
-            id="current-location-button"
-          />
-          <br />
+        <div className="col-3">
+          <input type="submit" 
+          className="btn btn-success" 
+          value="Search" />
         </div>
       </div>
     </form>
-    </div>
-  );
+    <h1> {weatherData.city}</h1>
+            <br />
+            <div className="row">
+              <div className="col-4">
+                <p className="details">
+                  <ul>
+                    <li>Pressure:{weatherData.pressure}</li>
+                    <li>Humidity:{weatherData.humidity}</li>
+                    <li>Wind:{weatherData.wind}</li>
+                  </ul>
+                </p>
+              </div>
+              <div className="col-8">
+                <p className="city-info">
+                  Last updated at: <span id="date"></span>
+                </p>
+                <ul>
+                  <li id="overall-weather">{weatherData.description}</li>
+                  <li>
+                    <div className="d-flex weather-temperature">
+                      <img
+                        src={weatherData.icon}
+                        alt="Clear"
+                        id="icon"
+                        className="float-right"
+                      />
+                      <div className="float-right">
+                        <div className="currentTemp">
+                          <span id="temperature">
+                            {Math.round(weatherData.temperature)}
+
+                          </span>
+                          <span className="units">
+                            <span href="#" id="celsius-link" className="active">
+                              °C
+                            </span>{" "}
+                            |{" "}
+                            <span href="#" id="fahrenheit-link">
+                              °F
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    );
 } else {
   search();
   return "Loading...";
-}
+    }
 }
