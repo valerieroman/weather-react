@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import WeatherInfo from "./WeatherInfo";
 import "./App.css";
 import Footer from "./Footer";
 
