@@ -1,15 +1,14 @@
 import React from "react";
-import Search from "./Search";
+import Weather from "./Weather";
 import "./App.css";
-import Footer from "./Footer";
 
-export default function Weather() {
+export default function App() {
   return (
     <div className="App">
       <div className="container">
         <div className="weather-app-wrapper">
           <div className="card">
-            <h1>Philadelphia</h1>
+            <Weather defaultCity="Philadelphia" />
             <br />
             <div className="row">
               <div className="col-4">
@@ -56,7 +55,6 @@ export default function Weather() {
               </div>
             </div>
             <div className="days-forecast" id="weather-forecast-temp"></div>
-            <Search />
           </div>
         </div>
 <Footer />
