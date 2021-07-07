@@ -57,7 +57,12 @@ export default function App() {
             <div className="days-forecast" id="weather-forecast-temp"></div>
           </div>
         </div>
-<Footer />
+<footer>
+This project was coded by{" "}
+<a href="https://www.linkedin.com/in/valerie-rom%C3%A1n-de-jes%C3%BAs-189069185/" target="_blank" rel="noopener noreferrer">
+ Valerie Roman De Jesus </a>{" "}and is{" "} <a href= "https://github.com/valerieroman/weather-react" target="_blank" rel="noreferrer"> open-sourced on GitHub 
+          </a>
+</footer>
       </div>
     </div>
   );
