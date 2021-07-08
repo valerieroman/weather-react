@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
 import FormattedDate from "./FormattedDate";
 import "./App.css";
 import axios from "axios";
@@ -40,54 +41,8 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-    <h1> {weatherData.city}</h1>
-            <br />
-            <div className="row">
-              <div className="col-4">
-                <p className="details">
-                  <ul>
-                    <li>Pressure:{" "}{Math.round(weatherData.pressure)}%</li>
-                    <li>Humidity:{" "}{Math.round(weatherData.humidity)}%</li>
-                    <li>Wind:{" "}{Math.round(weatherData.wind)}{" "}mph</li>
-                  </ul>
-                </p>
-              </div>
-              <div className="col-8">
-                <p className="city-info">
-                  Last updated at:{" "}<FormattedDate date={weatherData.date} />
-                </p>
-                <ul>
-                  <li className="text-capitalize" id="overall-weather">{weatherData.description}</li>
-                  <li>
-                    <div className="d-flex weather-temperature">
-                      <img
-                        src={weatherData.icon}
-                        alt="Clear"
-                        id="icon"
-                        className="float-right"
-                      />
-                      <div className="float-right">
-                        <div className="currentTemp">
-                          <span id="temperature">
-                            {Math.round(weatherData.temperature)}
-
-                          </span>
-                          <span className="units">
-                            <span href="#" id="celsius-link" className="active">
-                              °C
-                            </span>{" "}
-                            |{" "}
-                            <span href="#" id="fahrenheit-link">
-                              °F
-                            </span>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-                <form onSubmit={handleSubmit}>
+        <WeatherInfo data={weatherData} />
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
@@ -107,7 +62,6 @@ export default function Weather(props) {
       </div>
     </form>
             </div>
-          </div>
     );
 } else {
   search();
