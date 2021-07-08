@@ -13,6 +13,7 @@ export default function Weather(props) {
       ready: true,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
+      pressure: response.data.main.pressure,
       date: "Wednesday 7:00",
       description: response.data.weather[0].description,
       iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
@@ -31,41 +32,22 @@ export default function Weather(props) {
 
   function search() {
     const apiKey= "b15c68d0eb463f5b86f355f615a747ce";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-9">
-              <input
-                type="search"
-                className="form-control"
-                placeholder="Search for a different city🔍"
-                autoFocus="on"
-                autoComplete="off"
-                onChange={handleCityChange}
-              />
-              </div>
-        <div className="col-3">
-          <input type="submit" 
-          className="btn btn-success" 
-          value="Search" />
-        </div>
-      </div>
-    </form>
     <h1> {weatherData.city}</h1>
             <br />
             <div className="row">
               <div className="col-4">
                 <p className="details">
                   <ul>
-                    <li>Pressure:{weatherData.pressure}</li>
-                    <li>Humidity:{weatherData.humidity}</li>
-                    <li>Wind:{weatherData.wind}</li>
+                    <li>Pressure:{" "}{Math.round(weatherData.pressure)}%</li>
+                    <li>Humidity:{" "}{Math.round(weatherData.humidity)}%</li>
+                    <li>Wind:{" "}{Math.round(weatherData.wind)}{" "}mph</li>
                   </ul>
                 </p>
               </div>
@@ -74,7 +56,7 @@ export default function Weather(props) {
                   Last updated at: <span id="date"></span>
                 </p>
                 <ul>
-                  <li id="overall-weather">{weatherData.description}</li>
+                  <li className="text-capitalize" id="overall-weather">{weatherData.description}</li>
                   <li>
                     <div className="d-flex weather-temperature">
                       <img
@@ -104,6 +86,25 @@ export default function Weather(props) {
                   </li>
                 </ul>
               </div>
+                <form onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                className="form-control"
+                placeholder="Search for a different city🔍"
+                autoFocus="on"
+                autoComplete="off"
+                onChange={handleCityChange}
+              />
+              </div>
+        <div className="col-3">
+          <input type="submit" 
+          className="btn btn-success" 
+          value="Search" />
+        </div>
+      </div>
+    </form>
             </div>
           </div>
     );
