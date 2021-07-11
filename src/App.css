@@ -89,10 +89,6 @@ ul {
   opacity: 0.5;
 }
 
-.emoji {
-  font-size: 36px;
-}
-
 .high-low {
   font-weight: 500;
   font-size: 25px;
@@ -156,4 +152,11 @@ footer {
   font-size: 11px;
   color: #000000;
   text-align: center;
+}
+
+.Weather canvas {
+  height: 64px;
+  width: 64px;
+  margin-right: 10px;
+  display: inline-block;
 }
