@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
-import FormattedDate from "./FormattedDate";
 import "./App.css";
 import axios from "axios";
 

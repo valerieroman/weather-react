@@ -141,7 +141,7 @@ ul {
   font-size: 25px;
 }
 
-.currentTemp {
+.weather-temperature {
   font-weight: 900;
   color: purple;
   font-size: 64px;
