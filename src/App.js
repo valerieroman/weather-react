@@ -13,7 +13,7 @@ export default function App() {
 This project was coded by{" "}
 <a href="https://www.linkedin.com/in/valerie-rom%C3%A1n-de-jes%C3%BAs-189069185/" target="_blank" rel="noopener noreferrer">
  Valerie Roman De Jesus </a>{" "}and is{" "} <a href= "https://github.com/valerieroman/weather-react" target="_blank" rel="noreferrer"> open-sourced on GitHub 
-          </a>
+          </a> and{" "} <a href="https://reverent-franklin-00f3a8.netlify.app/"target="_blank" rel="noopener noreferrer" >hosted on Netlify</a>
 </footer>
       </div>
       </div>
